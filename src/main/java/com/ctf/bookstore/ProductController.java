@@ -21,7 +21,6 @@ public class ProductController {
 	@Autowired
 	BookRepository repo;
 
-	@CrossOrigin("https://ctf-bookstoreback-end.herokuapp.com")
 	@GetMapping("/book") //ดูทั้งหมด
 	public List<Book> home() {
 		List<Book> booklist = repo.findAll();
