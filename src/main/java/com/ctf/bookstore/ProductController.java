@@ -35,12 +35,12 @@ public class ProductController {
 	}
 
 
-	@PostMapping("/book") //เพิ่ม
+	@PostMapping("/upload") //เพิ่ม
 	public Book addbook(@RequestBody Book book) {
 		return repo.save(book);
 	}
 	
-	@PutMapping("/book/{codebook}") //แก้ไข
+	@PutMapping("/upload/{codebook}") //แก้ไข
 	public Book editbook(@PathVariable("codebook") Integer codebook , @RequestBody Book book) {
 		Book editbook = repo.get(codebook);
 		editbook.setCodebook(book.getCodebook());
@@ -53,7 +53,7 @@ public class ProductController {
 		
 	}
 
-	@DeleteMapping("/book/{codebook}") //ลบ
+	@DeleteMapping("/delete/{codebook}") //ลบ
 	public void deleteCustomer(@PathVariable("codebook") Integer codebook) {
 		repo.delete(codebook);
 	}
