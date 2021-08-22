@@ -26,11 +26,12 @@ public class BookRepository {
 
 	@Transactional
 	public Book save(Book book) {
-		em.createNativeQuery("INSERT INTO bookstore.book (codebook, bookname, writer, price, stork, image) VALUES (?,?,?,?,?,?)")
-				.setParameter(1, book.getCodebook()).setParameter(2, book.getBookname())
-				.setParameter(3, book.getWriter()).setParameter(4, book.getPrice()).setParameter(5, book.getStork())
-				.setParameter(6, book.getImage())
-				.executeUpdate();
+		em.persist(book);
+//		em.createNativeQuery("INSERT INTO bookstore.book (codebook, bookname, writer, price, stork, image) VALUES (?,?,?,?,?,?)")
+//				.setParameter(1, book.getCodebook()).setParameter(2, book.getBookname())
+//				.setParameter(3, book.getWriter()).setParameter(4, book.getPrice()).setParameter(5, book.getStork())
+//				.setParameter(6, book.getImage())
+//				.executeUpdate();
 		return book;
 	}
 
