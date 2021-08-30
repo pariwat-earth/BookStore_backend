@@ -26,19 +26,18 @@ public class BookRepository {
 
 	@Transactional
 	public Book save(Book book) {
-		em.persist(book);
-//		em.createNativeQuery("INSERT INTO bookstore.book (codebook, bookname, writer, price, stork, image) VALUES (?,?,?,?,?,?)")
-//				.setParameter(1, book.getCodebook()).setParameter(2, book.getBookname())
-//				.setParameter(3, book.getWriter()).setParameter(4, book.getPrice()).setParameter(5, book.getStork())
-//				.setParameter(6, book.getImage())
-//				.executeUpdate();
+		em.createNativeQuery("INSERT INTO vfs0jwfnpe0aeo6j.book (codebook, bookname, writer, price, stork, image) VALUES (?,?,?,?,?,?)")
+				.setParameter(1, book.getCodebook()).setParameter(2, book.getBookname())
+				.setParameter(3, book.getWriter()).setParameter(4, book.getPrice()).setParameter(5, book.getStork())
+				.setParameter(6, book.getImage())
+				.executeUpdate();
 		return book;
 	}
 
 	@Transactional
 	public Book edit(Integer codebook, Book book) {
 		em.createNativeQuery(
-				"UPDATE `bookstore`.`book` SET `bookname` = '', `price` = '', `writer` = '', `stork` = '',  `image` = '', WHERE (`codebook` = 'codebook')")
+				"UPDATE `vfs0jwfnpe0aeo6j`.`book` SET `bookname` = '', `price` = '', `writer` = '', `stork` = '',  `image` = '', WHERE (`codebook` = 'codebook')")
 				.executeUpdate();
 		return book;
 	}

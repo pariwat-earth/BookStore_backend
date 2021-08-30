@@ -14,14 +14,12 @@ public class Book {
 	private Float price;
 	private String writer;
 	private Integer stork;
-	private byte[] image;
-
+	private String image;
 	public Book() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
-	public Book(Integer codebook, String bookname, Float price, String writer, Integer stork, byte[] image) {
+	public Book(Integer codebook, String bookname, Float price, String writer, Integer stork, String image) {
 		super();
 		this.codebook = codebook;
 		this.bookname = bookname;
@@ -30,53 +28,41 @@ public class Book {
 		this.stork = stork;
 		this.image = image;
 	}
-
 	public Integer getCodebook() {
 		return codebook;
 	}
-
 	public void setCodebook(Integer codebook) {
 		this.codebook = codebook;
 	}
-
 	public String getBookname() {
 		return bookname;
 	}
-
 	public void setBookname(String bookname) {
 		this.bookname = bookname;
 	}
-
 	public Float getPrice() {
 		return price;
 	}
-
 	public void setPrice(Float price) {
 		this.price = price;
 	}
-
 	public String getWriter() {
 		return writer;
 	}
-
 	public void setWriter(String writer) {
 		this.writer = writer;
 	}
-
 	public Integer getStork() {
 		return stork;
 	}
-
 	public void setStork(Integer stork) {
 		this.stork = stork;
 	}
-
-	public byte[] getImage() {
+	public String getImage() {
 		return image;
 	}
-
-	public void setImage(byte[] image) {
+	public void setImage(String image) {
 		this.image = image;
 	}
-
+	
 }
